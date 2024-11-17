@@ -13,7 +13,7 @@ This repository is designed to refresh and enhance SQL skills. It connects to a 
 - A running PostgreSQL database instance.
 
 ## Setup
-1. Download the PostgreSQL JDBC driver from [here](https://jdbc.postgresql.org/download.html).
+1. Download the PostgreSQL JDBC driver from [here](https://jdbc.postgresql.org).
 2. Configure the connection details in the application (e.g., URL, username, password).
 
 ## Purpose
