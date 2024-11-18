@@ -35,13 +35,13 @@ public class DemoJdbc {
 
 
 
-            for(int i = 3; i<names.length+3; i++){
-                StringBuilder createQuery  = new StringBuilder("INSERT INTO STUDENT (sid,sname,marks) VALUES");
-                String tQuery = "("+i+","+"'"+names[i-3]+"'"+","+(int)(Math.random()*100)+")";
-                createQuery.append(tQuery);
-//                System.out.println(createQuery);
-                st.execute(createQuery.toString());
-            }
+//            for(int i = 3; i<names.length+3; i++){
+//                StringBuilder createQuery  = new StringBuilder("INSERT INTO STUDENT (sid,sname,marks) VALUES");
+//                String tQuery = "("+i+","+"'"+names[i-3]+"'"+","+(int)(Math.random()*100)+")";
+//                createQuery.append(tQuery);
+////                System.out.println(createQuery);
+//                st.execute(createQuery.toString());
+//            }
 
             String query = "SELECT * FROM STUDENT";
             ResultSet resultSet= st.executeQuery(query);
@@ -54,6 +54,26 @@ public class DemoJdbc {
                         +resultSet.getString("sname")+" Student Marks: "
                         +resultSet.getInt("marks"));
             }
+
+
+            System.out.println("---------------------Updating a row in the SQL Table-------------------");
+            String updateQuery = "UPDATE STUDENT SET SNAME='Charlie' WHERE SID=9";
+            st.execute(updateQuery);
+
+
+             query = "SELECT * FROM STUDENT";
+             resultSet= st.executeQuery(query);
+//            resultSet.next();
+//            String name = resultSet.getString("sname");
+//
+//            System.out.println("Name of a student is "+ name);
+            while(resultSet.next()){
+                System.out.println("Student ID: "+resultSet.getInt("sid")+" Student Name: "
+                        +resultSet.getString("sname")+" Student Marks: "
+                        +resultSet.getInt("marks"));
+            }
+
+
 
 
 
