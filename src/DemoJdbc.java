@@ -55,6 +55,7 @@ public class DemoJdbc {
                         +resultSet.getInt("marks"));
             }
 
+            //update operations using SQL and JDBC
 
             System.out.println("---------------------Updating a row in the SQL Table-------------------");
             String updateQuery = "UPDATE STUDENT SET SNAME='Charlie' WHERE SID=9";
@@ -72,6 +73,27 @@ public class DemoJdbc {
                         +resultSet.getString("sname")+" Student Marks: "
                         +resultSet.getInt("marks"));
             }
+
+            //delete operations using JDBC and SQL
+
+            System.out.println("---------------------Deleting a row in the SQL Table-------------------");
+            String deleteQuery = "DELETE FROM STUDENT WHERE SID=9";
+            st.execute(deleteQuery);
+
+            query = "SELECT * FROM STUDENT";
+            resultSet= st.executeQuery(query);
+//            resultSet.next();
+//            String name = resultSet.getString("sname");
+//
+//            System.out.println("Name of a student is "+ name);
+            while(resultSet.next()){
+                System.out.println("Student ID: "+resultSet.getInt("sid")+" Student Name: "
+                        +resultSet.getString("sname")+" Student Marks: "
+                        +resultSet.getInt("marks"));
+            }
+
+
+
 
 
 
