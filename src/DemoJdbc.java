@@ -93,7 +93,7 @@ public class DemoJdbc {
             }
 
 
-
+        //stopping SQL Injection to maintain the dynamic CRUD operations using SQL
 
 
 
